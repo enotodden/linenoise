@@ -17,7 +17,7 @@ $(SHARED_LIB): $(OBJECTS)
 install:
 	mkdir -p $(PREFIX)/lib
 	install -m 0755 $(SHARED_LIB) $(PREFIX)/lib/$(SHARED_LIB) && \
-	ln -s $(PREFIX)/lib/$(SHARED_LIB) $(PREFIX)/lib/liblinenoise.dylib
+	ln -sf $(PREFIX)/lib/$(SHARED_LIB) $(PREFIX)/lib/liblinenoise.dylib
 
 else # Linux
 
@@ -32,7 +32,7 @@ install:
 	mkdir -p $(PREFIX)/lib
 	install -m 0755 $(SHARED_LIB).1.0.0 $(PREFIX)/lib/$(SHARED_LIB).1.0.0 && \
 		ldconfig $(PREFIX)/lib && \
-		ln -s $(PREFIX)/lib/$(SHARED_LIB).1.0.0 $(PREFIX)/lib/$(SHARED_LIB)
+		ln -sf $(PREFIX)/lib/$(SHARED_LIB).1.0.0 $(PREFIX)/lib/$(SHARED_LIB)
 
 endif
 
